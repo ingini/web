@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>New Article</h1>
+<form action="/articles/create/" method="get">
+    <input type="text" name = 'title'>
+    <input type="text" name = 'content'>
+    <input type="submit">
+</form>
+
+{%endblock%}
