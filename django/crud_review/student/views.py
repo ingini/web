@@ -3,58 +3,52 @@ from .models import Article
 
 # Create your views here.
 def index(request):
-    articles = Article.objects.all().order_by('-id') #=> QuerySet ~= List
+    articles = Article.objects.all().order_by('-id')
 
     context = {
         'articles' : articles,
     }
-    return render(request, 'articles/index.html', context)
+    return render(request, 'student/index.html', context)
 
 def new(request):
-    return render(request, 'articles/new.html')
+    return render(request, 'student/new.html')
 
 def create(request):
-    # 이유 2번 때문에
-    # 2번 - GET(url), POST(http body)
     title = request.POST.get('title')
     content = request.POST.get('content')
 
     article = Article.objects.create(title=title, content=content)
-    # article.title
-    # article.content
 
-    return redirect(f'/articles/{article.pk}/')
+    return redirect(f'/student/{article.pk}/')
 
 def detail(request, pk):
     article = Article.objects.get(pk=pk)
     context = {
         'article' : article,
     }
-    return render(request, 'articles/detail.html', context)
+    return render(request, 'student/detail.html', context)
 
 def delete(request, pk):
     article = Article.objects.get(pk=pk)
     article.delete()
-    return redirect('/articles/')
+    return redirect('/student/')
 
 def edit(request, pk):
     article = Article.objects.get(pk=pk)
     context = {
         'article' : article,
     }
-    return render(request, 'articles/edit.html', context)
+    return render(request, 'student/edit.html', context)
 
 def update(request, pk):
-    # 1. pk에 해당하는 article 가져오기
+
     article = Article.objects.get(pk=pk)
 
-    # 2. edit로부터 넘어온 데이터 가져오기
     title = request.POST.get('title')
     content = request.POST.get('content')
 
-    # 3. 넘어온 데이터를 article에 새롭게 저장
     article.title = title
     article.content = content
     article.save()
 
-    return redirect(f'/articles/{article.pk}/')
+    return redirect(f'/student/{article.pk}/')

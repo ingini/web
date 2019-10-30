@@ -1,12 +1,23 @@
+<!-- send : Form Tag를 사용하여, receive로 데이터 보내기 -->
 {% extends 'base.html' %}
 
 {% block body %}
+<!-- GET이 아닌 POST를 써야하는 이유 -->
+<!-- 1. GET의 의미상 맞지 않다 -->
+<!-- 2. 데이터가 URL에 노출되면 안되기 때문에 (보안) -->
+<!-- 3. 최소한의 신원 확인 (csrf) -->
 
-<h1>New Article</h1>
-<form action="/articles/create/" method="get">
-    <input type="text" name = 'title'>
-    <input type="text" name = 'content'>
+<form action="/articles/create/" method="POST">
+    <!-- 3번 이유 때문에 csrf 추가 -->
+    {% csrf_token %}
+    <label for="title">제목 : </label>
+    <input id="title" type="text" name="title">
+
+    <label for="content">내용 : </label>
+    <input id="content" type="text" name="content">
+
     <input type="submit">
 </form>
 
-{%endblock%}
+{% endblock %}
+<!-- receive : 넘어온 데이터를 보여주기 -->

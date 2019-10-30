@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fi@#djjb$9gl3$q@^fl3ihfqcgf7(yn*d1mibii(#k1ox3*-5k'
+SECRET_KEY = '9jsip%diki-nfz1+lb5-_c!5h8!tjrg1nrai2-%3voi43@fif$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'utils',
     'pages',
+    'utils',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'intro', 'templates'), #=> 'intro/intro/templates'
+            os.path.join(BASE_DIR, 'intro', 'templates'), #=> 'intro/intro/templates' / os.path는 운영체제 별로 폴더 구분자가 달라서 씀
         ],
         'APP_DIRS': True,
         'OPTIONS': {

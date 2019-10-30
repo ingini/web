@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="/student/create/" method="POST">
+    <!-- 3번 이유 때문에 csrf 추가 -->
+    {% csrf_token %}
+    <label for="title">제목 : </label>
+    <input id="title" type="text" name="title">
+
+    <label for="content">내용 : </label>
+    <input id="content" type="text" name="content">
+
+    <input type="submit">
+</form>
+{% endblock %}
