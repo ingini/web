@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'myhwuwxlz0%nkgyag=e!#)142!r+=!3n-70hf95pbu899_dya-'
+SECRET_KEY = 'yx(n*=96_0#b(xeuopu@6mscweau$@%u5mbogxu1%7^fidm0*-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'student',
+    'students',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'crud_review', 'templates')
+            os.path.join(BASE_DIR, 'crud_review', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

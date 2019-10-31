@@ -1,10 +1,14 @@
-<!-- send : Form Tag를 사용하여, receive로 데이터 보내기 -->
+<!-- receive.html -->
+<!-- 넘어온 데이터를 보여주기 -->
+<!-- title, content -->
+
 {% extends 'base.html' %}
 
 {% block body %}
 
 <h1>Create</h1>
-<h1>{{ title }}</h1>
+<h2>{{ title }}</h2>
 <p>{{ content }}</p>
 
 {% endblock %}
+
